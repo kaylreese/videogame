@@ -1,0 +1,205 @@
+body{
+    background: #131313;
+  }
+
+.home{
+    /* display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 1000%;
+    margin-left: 320px; */
+}
+
+.titulo {
+    width: 100%;
+    padding: 0 10px;
+    text-align: center;
+    color: white;
+    font-size: 35px;
+    font-weight: 800;
+}
+
+.titulo span {
+    color: #B70E21;
+}
+
+.acciones {
+    /* border-bottom: 1px solid brown; */
+    padding: 10px 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.acciones h1, h2, label {
+    color: aquamarine;
+}
+
+.acciones label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+.alfabetico {
+    margin: 0px 5px;
+}
+
+.rating {
+    margin: 0px 5px;
+}
+
+.origen {
+    margin: 0px 5px;
+}
+
+.genres {
+    margin: 0px 5px;
+}
+
+.genres select option::first-letter {
+    text-transform: uppercase;
+}
+
+.acciones .alfabetico select, 
+.acciones .rating select,
+.acciones .origen select,
+.acciones .genres select, 
+.acciones .buscar select {
+    padding: 4px 5px;
+    border-radius: 8px;
+    border: 1px solid rgb(6, 230, 230);
+    background: none;
+    color: grey;
+}
+
+.acciones .alfabetico select:focus, 
+.acciones .rating select:focus,
+.acciones .origen select:focus,
+.acciones .genres select:focus, 
+.acciones .buscar select:focus {
+    padding: 4px 5px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgb(6, 230, 230),
+                0 0 75px rgb(6, 230, 230);
+    border: 1px solid rgb(6, 230, 230);
+}
+
+/* .acciones .alfabetico select::placeholder, 
+.acciones .rating select::placeholder,
+.acciones .origen select::placeholder,
+.acciones .genres select::placeholder, 
+.acciones .buscar select::placeholder {
+    color: grey;
+} */
+
+.buscar {
+    margin: 0px 5px;
+}
+
+.buscar input, button {
+    margin: 0px 5px;
+}
+
+.create {
+    /* display: flex;
+    position: relative;
+    align-content: center;
+    justify-content: center; */
+}
+
+.cards {
+    border: 1px solid brown;
+    border: 15px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: 71vh;
+    overflow-x: auto;
+}
+
+.paginado {
+    position: relative;
+	display: flex;
+	justify-content: center;
+    align-content: center;
+    height: 6vh;
+    /* padding: 5px; */
+}
+
+.buscar input {
+    padding: 4px 5px;
+    color: white;
+    font-size: 12px;
+    text-indent: 15px;
+    border-radius: 10px;
+    outline: none;
+    background: none;
+    /* border: grey; */
+    transition: .3s;
+    border: 1px solid rgb(6, 230, 230);
+}
+
+.buscar input:focus {
+    padding: 4px 5px;
+    box-shadow: 0 0 15px rgb(6, 230, 230),
+                0 0 75px rgb(6, 230, 230);
+    border: 1px solid rgb(6, 230, 230);
+}
+
+.buscar input::placeholder {
+    color: grey;
+}
+
+
+.btn {
+    cursor: pointer;
+    background: black;
+    border: none;
+    padding: 8px 16px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    position: relative;
+    border-radius: 12px;
+    /* top: -15%; */
+    text-decoration: none;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background: rgb(255, 255, 255);
+    border: none;
+    padding: 8px 16px;
+    color: rgb(204, 11, 11);
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, red, blue, deeppink, blue, red, blue, deeppink, blue);
+    background-size: 800%;
+    border-radius: 10px;
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}

@@ -1,0 +1,229 @@
+@import url('https://fonts.cdnfonts.com/css/pokemon-solid');
+
+/* .content {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+} */
+
+.container {
+    position: relative;
+    margin: 0 30px 25px 30px;
+    width: 95%;
+    height: 100%;
+    border-radius: 10px;
+    background: linear-gradient(0deg, black, rgb(44, 43, 43));
+    /* margin-bottom: 15px; */
+}
+
+.container::before, .container::after {
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #e6fb04, #ff6600, #00ff66, #00ffff, #ff00ff,
+    #ff0099, #6e0dd0, #ff3300, #099fff);
+    background-size: 400%;
+    width: calc(100% + 5px);
+    height: calc(100% + 5px);
+    z-index: -1;
+    animation: animate 20s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+} 
+
+.container::after {
+    filter: blur(20px);
+    opacity: 0.5;
+}
+
+.datos {
+    position: relative;
+	text-align: left;
+	overflow: hidden;
+    padding: 20px 50px 5px 50px;
+	height: 100%;
+	float: left;
+	width: 50%;
+}
+
+h1 {
+	color: #ff8800;
+    margin: 0;
+}
+
+.container .datos h1::first-letter {
+    text-transform: uppercase;
+}
+
+.datos span{
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    font-size: 14px;
+    display: inline-block;
+    color: #111;
+    background: #fff;
+    margin: 3px 5px;
+    transition: 0.5s;
+    border-radius: 4px;
+    padding: 0px 10px;
+}
+
+.datos h5 span{
+    background: #9bdc28;
+}
+
+.subtitulo  {
+    color: aqua;
+    font-weight: bold;
+}
+
+.image {
+    transition: all 0.3s ease-out;
+	position: relative;
+	overflow: hidden;
+	height: 100%;
+	width: 45%;
+    display: relative;
+    margin: 10px 10px;
+    margin-top: 50px;
+}
+
+.image img {
+    width: 556px;
+    margin-top: 40px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.descripcion {
+    margin: 0 50px;
+    text-align: justify;
+}
+
+.btn {
+    padding: 1rem;
+    align-content: center;
+}
+
+.btnregresar {
+    cursor: pointer;
+    background: black;
+    border: 1px solid #099fff;
+    padding: 8px 16px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    /* position: relative; */
+    border-radius: 5px;
+    /* top: -15%; */
+    text-decoration: none;
+}
+
+.btnregresar:hover {
+    cursor: pointer;
+    background: rgb(255, 255, 255);
+    border: none;
+    padding: 8px 16px;
+    color: rgb(204, 11, 11);
+}
+
+.btnregresar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, red, blue, deeppink, blue, red, blue, deeppink, blue);
+    background-size: 800%;
+    border-radius: 10px;
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+@keyframes pulse { 
+    from {
+        box-shadow: 0 0 25px #7effb2, 0 0 50px #2cd9ff ;
+    }
+}
+
+.btnregresar:focus {
+    animation: pulse 0.5s ease-in-out;
+}
+
+@media screen and (max-width: 1350px){
+    .datos {
+        width: 83%;
+        margin: 5px 50px;
+    }
+    .image {
+        width: 83%;
+        margin-top: 0px;
+        margin: 0 50px;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .datos {
+        width: 80%;
+        margin: 5px 50px;
+    }
+    .image {
+        width: 83%;
+        margin: 0 50px;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .datos {
+        width: 80%;
+        margin: 5px 50px;
+    }
+    .image {
+        width: 83%;
+        margin: 0 30px;
+    }
+    .descripcion {
+        margin: 0 30px;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .datos {
+        width: 80%;
+        margin: 5px 30px;
+    }
+    .image {
+        width: 83%;
+        margin: 0 30px;
+    }
+    .descripcion {
+        margin: 0 30px;
+    }
+}
