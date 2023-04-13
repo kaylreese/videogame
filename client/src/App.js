@@ -6,7 +6,7 @@ import Detail from './components/Detail/Detail';
 import Home from './components/Home/Home';
 import Landing from './components/Landing/Landing';
 import axios from 'axios';
-axios.defaults.baseURL = 'http://localhost:3001/';
+axios.defaults.baseURL = 'https://videogame-production.up.railway.app/';
 
 function App() {
   return (
