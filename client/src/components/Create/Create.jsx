@@ -53,13 +53,18 @@ export default function Create() {
 
     const handleSelectPlatforms = (selected) => {
         const opcion = selected.target.selectedOptions[0].label;
-        setDataPlatforms([
-            ...dataPlatforms, opcion,
-        ]);
 
-        setVideogameData({
-            ...videogameData, ['platforms']: dataPlatforms,
-        });
+        const validar = dataPlatforms.includes(opcion);
+
+        if(!validar) {
+            setDataPlatforms([
+                ...dataPlatforms, opcion,
+            ]);
+
+            setVideogameData({
+                ...videogameData, ['platforms']: dataPlatforms,
+            });
+        }
 
         setErrors (
             validacion({
@@ -71,13 +76,17 @@ export default function Create() {
     const handleSelectGenres = (selected) => {
         const opcion = selected.target.selectedOptions[0].label;
 
-        setDataGenres([
-            ...dataGenres, opcion,
-        ]);
+        const validar = dataGenres.includes(opcion);
 
-        setVideogameData({
-            ...videogameData, ['genres']: dataGenres,
-        });
+        if(!validar) {
+            setDataGenres([
+                ...dataGenres, opcion,
+            ]);
+
+            setVideogameData({
+                ...videogameData, ['genres']: dataGenres,
+            });
+        }
 
         setErrors (
             validacion({
@@ -97,7 +106,7 @@ export default function Create() {
         e.preventDefault();
         console.log(videogameData);
 
-        if(videogameData.name === '' || videogameData.description === '' || videogameData.rating === '' || videogameData.platforms === '' || videogameData.genres === '' || videogameData.image === '') {
+        if(videogameData.name.trim() === '' || videogameData.description === '' || videogameData.rating === '' || videogameData.platforms === '' || videogameData.genres === '' || videogameData.image === '') {
             alert("Todos los Datos son requeridos, vuelva a intentarlo");
         } else {
             try {
